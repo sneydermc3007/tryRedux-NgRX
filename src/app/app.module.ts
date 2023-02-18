@@ -10,10 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BedsEffects } from './effects/beds.effects';
 import { BedsService } from './services/beds.service';
 import { bedsReducer } from "./store/beds.reducer";
+import { ValueArrayPipe } from './pipes/value-array.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ValueArrayPipe
   ],
   imports: [
     BrowserModule,

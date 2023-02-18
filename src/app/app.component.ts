@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { loadBeds } from "./store/beds.actions";
 import { BedsState } from "./store/beds.reducer";
 import { Bed } from "./interface/bed.interface"
-import { BedsService } from './services/beds.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,9 @@ export class AppComponent implements OnInit{
 
   constructor(private store: Store<BedsState>) { }
 
-  beds$: Observable<Bed[]> = this.store.select(state => state.beds);
+  // beds$: Observable<Bed[]> = this.store.select(state => state.beds);
+  beds$: Observable<Bed[]> = this.store.select(state => Object.values(state.beds));
+
 
   ngOnInit() {
     this.store.dispatch(loadBeds());
