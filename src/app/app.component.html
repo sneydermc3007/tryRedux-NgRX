@@ -396,5 +396,5 @@
 
 <h2>Llegada de camas</h2>
 <ul>
-  <li *ngFor="let bed of beds$ | async"> {{ bed.id }} </li>
+  <li *ngFor="let bed of beds$ | async | keyvalue"> {{ bed.value.id }} </li>
 </ul>

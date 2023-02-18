@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { Bed } from "./../interface/bed.interface"
 
 @Injectable({
   providedIn: 'root'
