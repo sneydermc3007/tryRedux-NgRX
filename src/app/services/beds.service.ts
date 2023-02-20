@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from "rxjs";
+import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BedsService {
-
-  constructor() { }
+  constructor() {}
 
   getCamas(): Observable<any> {
     return of([
@@ -18,7 +17,7 @@ export class BedsService {
         tiempoMaximo: 60,
         tiempoTotalAsper: 120,
         volPromedioCama: 20,
-        valorRecorido: 80
+        valorRecorido: 80,
       },
       {
         id: 2,
@@ -28,7 +27,7 @@ export class BedsService {
         tiempoMaximo: 40,
         tiempoTotalAsper: 40,
         volPromedioCama: 25,
-        valorRecorido: 50
+        valorRecorido: 50,
       },
       {
         id: 3,
@@ -38,8 +37,8 @@ export class BedsService {
         tiempoMaximo: 20,
         tiempoTotalAsper: 10,
         volPromedioCama: 15,
-        valorRecorido: 30
-      }
+        valorRecorido: 30,
+      },
     ]);
-  };
+  }
 }

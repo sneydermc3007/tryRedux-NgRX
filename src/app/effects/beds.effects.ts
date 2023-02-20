@@ -12,14 +12,17 @@ export class BedsEffects {
   loadBeds$ = createEffect(() =>
     this.actions$.pipe(
       ofType(BedsActions.loadBeds),
-      switchMap(() => this._beds.getCamas().pipe(
-        map(beds => BedsActions.loadBedsSuccess({ beds })),
-        catchError(error => of(BedsActions.loadBedsFailure({ error })))
-      ))
+      switchMap(() =>
+        this._beds.getCamas().pipe(
+          map((beds) => {
+            console.warn('Camas', beds);
+            return BedsActions.loadBedsSuccess({ beds });
+          }),
+          catchError((error) => of(BedsActions.loadBedsFailure({ error })))
+        )
+      )
     )
   );
 
-  constructor( private actions$: Actions, private _beds: BedsService ) { }
+  constructor(private actions$: Actions, private _beds: BedsService) {}
 }
-
-
